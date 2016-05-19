@@ -10,6 +10,17 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    @IBAction func nextWithSegue(sender: AnyObject) {
+        performSegueWithIdentifier("etcsegue", sender: self)
+    }
+    
+    @IBAction func nextViewController(sender: AnyObject) {
+        if let svc = self.storyboard?.instantiateViewControllerWithIdentifier("thirdview"){
+            self.navigationController?.pushViewController(svc, animated: true)
+            
+            
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
